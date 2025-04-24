@@ -1,12 +1,25 @@
-# React + Vite
+# 📘 Trabajo Práctico N°3 – Programación Visual
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 👨‍💻 Integrantes del grupo
 
-Currently, two official plugins are available:
+| Nombre completo       | Usuario de GitHub        |
+|-----------------------|--------------------------|
+| Cristian Ariel Mamani | @srblick                 |
+| Ariel Sergio Reyes    | @Areyss                  |
+| Joel Brian Garcia     | @JoelGarcia21            |
+| Aldana Sabrina Poma   | @PomaSabrina             |
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🧠 Descripción del proyecto
 
-## Expanding the ESLint configuration
+Este proyecto es una aplicación de lista de tareas desarrollada en React como parte del Trabajo Práctico N°3 de la materia **Programación Visual**.  
+El objetivo principal es aplicar los conceptos fundamentales de React, como componentes, props, estado y hooks, en una aplicación funcional, organizada y escalable.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 🛠 Funcionalidades implementadas
+
+- Agregar nuevas tareas
+- Visualizar la lista de tareas
+- Marcar tareas como completadas
+- Eliminar tareas
+
+La aplicación fue creada utilizando **Vite** con la plantilla de React, y organizada en componentes reutilizables para una mejor estructura.
+
