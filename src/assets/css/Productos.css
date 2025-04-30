@@ -1,0 +1,41 @@
+.productos-container{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+.tittle-productos{
+    display: block;
+    font-size: 2em;
+    font-weight: bold;
+}
+.list-container {
+    padding: 0;
+    margin: 0;
+}
+
+.list-container ul {
+    list-style: none;
+}
+.item-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 8px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    list-style: none;
+  }
+  .item-container div.item-text {
+    flex: 1;
+    text-align: left;
+  }
+  
+  .item-container div.item-price {
+    color: #3498db; /* Un color llamativo para el precio */
+    font-weight: bold;
+    margin-left: 10px;
+  }
