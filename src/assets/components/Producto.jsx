@@ -1,29 +1,59 @@
 import React from "react";
 import '/src/assets/css/Productos.css'
+import { agregarProducto, filtrarMayores, agregarIVA, ordenarPorPrecio, eliminarMasBarato, usarValoresDefault} from "../services/ProductoService.js";
 const Productos = () => {
-  const productos = [
-    { descripcion: "Auriculares", precio: 49000 },
-    { descripcion: "Teclado", precio: 30000 },
-    { descripcion: "Mouse", precio: 15000 },
-    { descripcion: "Monitor", precio: 120000 },
-    { descripcion: "Parlantes", precio: 35000 },
-  ];
+  function manejarSubmit(evento) {
+    evento.preventDefault();
 
-    // Muestra en consola cada producto
-    productos.forEach(producto => {
-    console.log(`Producto: ${producto.descripcion} - Precio: $${producto.precio}`);
-    });
+    const nombre = document.getElementById('nombre').value;
+    const precio = parseFloat(document.getElementById('precio').value).toFixed(2);
+
+    agregarProducto(nombre, precio);
+
+    document.getElementById('nombre').value = '';
+    document.getElementById('precio').value = '';
+  }
+
   return (
     <div className="productos-container">
+      <h2 className="tittle-productos">Agregar Productos</h2>
+      <form onSubmit={manejarSubmit}>
+        <input
+          type="text"
+          id="nombre"
+          name="nombre"
+          placeholder="Nombre del producto"
+          required
+        />
+        <input
+          type="number"
+          id="precio"
+          name="precio"
+          placeholder="Precio"
+          required
+          step="any"
+        />
+        <button id="boton" type="submit">
+          Agregar Producto
+        </button>
+        <button onClick={usarValoresDefault}>
+          Cargar Productos Default
+        </button>
+        <button onClick={filtrarMayores}>
+          Mostrar Productos Mayores a $20,000
+        </button>
+        <button onClick={agregarIVA}>
+          Agregar IVA
+        </button>
+        <button onClick={ordenarPorPrecio}>
+          Ordenar de Menor a Mayor
+        </button>
+        <button onClick={eliminarMasBarato}>
+          Eliminar Mas Barato
+        </button>
+      </form>
       <h2 className="tittle-productos">Lista de Productos</h2>
-      <ul className="list-container">
-        {productos.map((producto, index) => (
-          <li key={index} className="item-container">
-            <div className="item-text">{producto.descripcion}</div>
-            <div className="item-price">${producto.precio.toLocaleString()}</div>
-          </li>
-        ))}
-      </ul>
+      <ul id="lista-productos"></ul>
     </div>
   );
 };
