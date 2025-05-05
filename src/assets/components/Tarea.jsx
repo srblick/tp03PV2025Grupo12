@@ -4,7 +4,7 @@ import TaskList from './TaskList'
 function Tarea() {
     const [tasks, setTasks] = useState([]);
     console.clear(); 
-     console.log("Estado actual de las tareas :", tasks);
+    console.log("Estado actual de las tareas :", tasks);
     const addTask = (text) => {
         const newTask = {
             id: Date.now(), // ID unico usando la fecha del sistema
@@ -22,11 +22,16 @@ function Tarea() {
         ))
     }
 
+    const deleteTask = (id) =>{  // Recibe el ID de la tarea a eliminar
+        setTasks(tasks.filter(task => task.id !==id))
+        // Filtra el array tasks para mantener solo las tareas que no coincidan con el ID recibido
+    }
+
     return(
         <div className="tareas-container">
             <h1>Lista de tareas</h1>
             <TaskInput addTask={addTask} />
-            <TaskList tasks={tasks} toggleTask={toggleTask} />
+            <TaskList tasks={tasks} toggleTask={toggleTask} deleteTask={deleteTask}/>
         </div>
     )
 }

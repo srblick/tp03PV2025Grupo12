@@ -1,9 +1,11 @@
 import TaskItem from './TaskItem'
 
-function TaskList({ tasks, toggleTask }) {
+
+function TaskList({ tasks, toggleTask, deleteTask }) {
     // Recibe props:
     // - tasks: Array de objetos de tareas
-    // - toggleTask: Funcion para cambiar estado completado/pendiente
+    // - toggleTask: funcion para cambiar estado
+    // - deleteTask: funcion para eliminar tarea
     return (
         <div className='list-container'>
             <ul>
@@ -12,6 +14,7 @@ function TaskList({ tasks, toggleTask }) {
                     key={task.id} 
                     task={task} 
                     toggleTask={toggleTask} 
+                    deleteTask={deleteTask}
                 />
             ))}
             </ul>
