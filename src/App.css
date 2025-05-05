@@ -1,8 +1,8 @@
 .container {
   display: flex;
-  flex-direction: row; /* Disposición en fila (columnas laterales) */
-  flex-wrap: wrap; /* Permite el salto de línea */
-  justify-content: space-between; /* Distribuye el espacio */
+  flex-direction: row; 
+  flex-wrap: wrap; 
+  justify-content: space-between; 
   gap: 20px;
   width: 100%;
   max-width: 1200px;
@@ -15,7 +15,6 @@
   box-sizing: border-box; /* Incluye padding en el ancho */
 }
 
-/* Responsive para móviles */
 @media (max-width: 768px) {
   .container > * {
       flex: 1 1 100%; /* Ocupa el 100% en móviles */
