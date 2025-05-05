@@ -1,8 +1,9 @@
 
-function TaskItem({ task, toggleTask }){
+function TaskItem({ task, toggleTask, deleteTask }){
     // Recibe dos props:
     // - task: objeto con { id, texto, completado }
     // - toggleTask: funcion para cambiar estado
+    // - deleteTask: funcion para eliminar tarea
     return(
         <div className="item-container">
             <li>
@@ -14,7 +15,7 @@ function TaskItem({ task, toggleTask }){
             <span style={{ textDecoration: task.completado ? 'line-through' : 'none' }}>
                 {task.texto}
             </span>
-            <button>Eliminar</button>
+            <button onClick={() => deleteTask(task.id)}>Eliminar</button>
             </li>
         </div>
     )
