@@ -6,7 +6,7 @@ const Productos = () => {
     evento.preventDefault();
 
     const nombre = document.getElementById('nombre').value;
-    const precio = parseFloat(document.getElementById('precio').value).toFixed(2);
+    const precio = parseFloat(document.getElementById('precio').value);
 
     agregarProducto(nombre, precio);
 
@@ -31,27 +31,18 @@ const Productos = () => {
           name="precio"
           placeholder="Precio"
           required
-          step="any"
+          step="0.01"
         />
-        <button id="boton" type="submit">
-          Agregar Producto
-        </button>
-        <button onClick={usarValoresDefault}>
-          Cargar Productos Default
-        </button>
-        <button onClick={filtrarMayores}>
-          Mostrar Productos Mayores a $20,000
-        </button>
-        <button onClick={agregarIVA}>
-          Agregar IVA
-        </button>
-        <button onClick={ordenarPorPrecio}>
-          Ordenar de Menor a Mayor
-        </button>
-        <button onClick={eliminarMasBarato}>
-          Eliminar Mas Barato
-        </button>
+        <button id="boton" type="submit">Agregar Producto</button>
+        
       </form>
+      <div className="botonera">
+        <button onClick={usarValoresDefault}>Cargar Productos Default</button>
+        <button onClick={filtrarMayores}>Mostrar Productos Mayores a $20,000</button>
+        <button onClick={agregarIVA}>Agregar IVA</button>
+        <button onClick={ordenarPorPrecio}>Ordenar de Menor a Mayor</button>
+        <button onClick={eliminarMasBarato}>Eliminar Mas Barato</button>
+      </div>
       <h2 className="tittle-productos">Lista de Productos</h2>
       <ul id="lista-productos"></ul>
     </div>

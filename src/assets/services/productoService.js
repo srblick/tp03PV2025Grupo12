@@ -12,8 +12,19 @@ export const inicializarTabla = () => {
   
     productos.forEach((producto) => {
       const item = document.createElement('li');
-      item.textContent = `Producto: ${producto.nombre} - Precio: $${producto.precio}`;
-      lista.appendChild(item);
+      item.className = 'producto-item';
+    
+    const nombreSpan = document.createElement('span');
+    nombreSpan.className = 'producto-nombre';
+    nombreSpan.textContent = producto.nombre;
+    
+    const precioSpan = document.createElement('span');
+    precioSpan.className = 'producto-precio';
+    precioSpan.textContent = `$${producto.precio.toLocaleString('es-ES',{minimumFractionDigits: 2})}`;
+
+    item.appendChild(nombreSpan);
+    item.appendChild(precioSpan);
+    lista.appendChild(item);
     });
 }
 export const agregarProducto = (nombre, precio) => {
@@ -22,9 +33,20 @@ export const agregarProducto = (nombre, precio) => {
   
     const lista = document.getElementById('lista-productos');
     const item = document.createElement('li');
-    item.textContent = `Producto: ${producto.nombre} - Precio: $${producto.precio}`;
+    item.className = 'producto-item'; 
+    
+    const nombreSpan = document.createElement('span');
+    nombreSpan.className = 'producto-nombre';
+    nombreSpan.textContent = producto.nombre;
+    
+    const precioSpan = document.createElement('span');
+    precioSpan.className = 'producto-precio';
+    precioSpan.textContent = `$${producto.precio.toLocaleString('es-ES',{minimumFractionDigits: 2})}`; // Formato con separadores 
+    
+    item.appendChild(nombreSpan);
+    item.appendChild(precioSpan);
     lista.appendChild(item);
-  }
+}
 export const filtrarMayores = () => {
     const lista = document.getElementById('lista-productos');
     lista.innerHTML = '';
